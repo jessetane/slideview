@@ -1,11 +1,11 @@
 {
-  "name"          : "coffeshow",
-  "description"   : "client side slideshow",
+  "name"          : "coffeeshow",
+  "description"   : "HTML / javascript based slideshow",
   "author"        : "Jesse Tane <jesse@twosixheave.com>",
   "main"          : "coffeeshow.coffee",
   "version"       : "0.0.1",
   "dependencies"  : {
-    "underscore"    : ">=0"
+    "underscore"    : ">=0",
     "backbone"      : ">=0"
-  },
+  }
 }
