@@ -1,0 +1,1 @@
+A Backbone.View sublcass with slideshow functionality

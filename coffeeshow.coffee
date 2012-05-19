@@ -163,8 +163,8 @@ module.exports = class extends Backbone.View
         # fire an onload event
         @trigger "onload", @
       
-        # if we aren't preloading, then we are
-        # in charge of running the transitions
+        # if we make it here and aren't preloading, then 
+        # we are in charge of running the transitions
         if not @preloading
           slave.transition() for slave in @slaves
           @transition()
