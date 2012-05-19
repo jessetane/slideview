@@ -1,8 +1,8 @@
 {
-  "name"          : "coffeeshow",
-  "description"   : "A Backbone.View sublcass with slideshow functionality",
+  "name"          : "slideview",
+  "description"   : "Backbone.View sublcass with slideshow functionality",
   "author"        : "Jesse Tane <jesse@twosixheave.com>",
-  "main"          : "coffeeshow.coffee",
+  "main"          : "slideview.coffee",
   "version"       : "0.0.1",
   "dependencies"  : {
     "underscore"    : ">=0",

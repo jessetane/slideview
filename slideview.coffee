@@ -1,6 +1,6 @@
 #
-#  coffeeshow.coffee
-#  -----------------
+#  slideview.coffee
+#  ----------------
 #
 
 # jQuery or similar is required too, but you won't be using CommonJS for that will you?
