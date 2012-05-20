@@ -24,6 +24,7 @@ module.exports = class extends Backbone.View
     @queue = []
     
     # pass any of these in as an options to the constructor
+    @firstTransition ?= false
     @dissolve ?= false
     @autoSize ?= true
     @resizeParent ?= true
@@ -121,6 +122,8 @@ module.exports = class extends Backbone.View
         "background-size"     : "100%"
         "visibility"          : "hidden"
         "position"            : "absolute"
+        "top"                 : "0px"
+        "left"                : "0px"
       @el.prepend @currentSlide
       
       @loader = new Image
@@ -154,7 +157,7 @@ module.exports = class extends Backbone.View
       @loader = @url = null
     
     # check to see if everybody has what they need
-    if (++@loaded == 1 + @slaves.length)
+    if ++@loaded == 1 + @slaves.length
       
       # if we are a slave, let the master know we are ready
       if @master?
@@ -173,14 +176,14 @@ module.exports = class extends Backbone.View
   
   transition: =>
     duration = if @transitionDuration instanceof Array then @transitionDuration[@index] else @transitionDuration
-    if @firstRun
-      @firstRun = false
+    if @firstRun and not @firstTransition
       duration = 0
       @currentSlide.css
         "opacity": 1
     else
       @currentSlide.css
         "opacity": 0
+    @firstRun = false
     
     # if the slides are the same, just make 
     # sure everything is visible and bail
@@ -230,4 +233,3 @@ module.exports = class extends Backbone.View
       @currentSlide.css
         "opacity": 1
       animationComplete()
-
